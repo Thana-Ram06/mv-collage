@@ -1,0 +1,61 @@
+:root{--bg:#0f172a;--panel:#111827;--accent:#22c55e;--muted:#94a3b8;--text:#e5e7eb;--card:#0b1220;--chip:#1f2937}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#0b1220, #0f172a 40%, #0b1220);color:var(--text)}
+img{max-width:100%;display:block}
+.container{width:min(1200px,92%);margin:0 auto}
+
+.site-header{position:sticky;top:0;z-index:1000;background:rgba(10,15,25,.7);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
+.site-title{margin:0;padding:18px 0;font-size:28px;font-weight:700;letter-spacing:.3px}
+.nav{display:flex;flex-wrap:wrap;gap:10px 12px;padding:0 0 16px 0}
+.nav-btn{padding:10px 14px;border-radius:10px;background:linear-gradient(135deg,#1f2937,#0b1220);border:1px solid rgba(255,255,255,.08);color:var(--text);text-decoration:none;font-weight:600;transition:all .2s;box-shadow:inset 0 0 0 1px rgba(255,255,255,.04)}
+.nav-btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.3), inset 0 0 0 1px rgba(255,255,255,.08)}
+
+.hero{display:grid;grid-template-columns:370px 1fr;gap:22px;margin:22px 0}
+.hero-left{position:sticky;top:86px;height:70vh;min-height:520px}
+.carousel{height:100%;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#0a0f1a,#0f172a);border:1px solid rgba(255,255,255,.08)}
+.carousel-track{display:flex;flex-direction:column;gap:10px;padding:10px;animation:autoScroll 20s linear infinite}
+.carousel img{width:100%;height:calc((70vh - 50px)/3);object-fit:cover;border-radius:12px;border:1px solid rgba(255,255,255,.06)}
+@keyframes autoScroll{0%{transform:translateY(0)}100%{transform:translateY(-50%)}}
+
+.card{background:linear-gradient(180deg,rgba(17,24,39,.85),rgba(11,18,32,.85));border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px 18px;margin-bottom:18px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.card h2{margin:4px 0 10px 0;font-size:22px}
+.card p{color:var(--text);opacity:.92;line-height:1.65}
+
+.media{display:grid;grid-template-columns:160px 1fr;gap:16px;align-items:center}
+.media-image img{border-radius:12px;border:1px solid rgba(255,255,255,.08);height:140px;object-fit:cover}
+.news-banner{display:inline-block;padding:6px 10px;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.3);color:#86efac;border-radius:999px;font-weight:700;margin:6px 0}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 6px}
+.chip{display:inline-block;background:var(--chip);border:1px solid rgba(255,255,255,.06);padding:8px 10px;border-radius:999px;font-weight:600;color:#cbd5e1}
+
+.features{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.feature{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center}
+.feature img{height:100px;object-fit:cover;border-radius:10px;border:1px solid rgba(255,255,255,.08)}
+
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+.team-list{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.team-item{display:grid;grid-template-columns:80px 1fr;gap:12px;align-items:center}
+.team-item img{height:72px;width:72px;object-fit:cover;border-radius:50%;border:1px solid rgba(255,255,255,.08)}
+
+.buildings{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.building{background:rgba(31,41,55,.5);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:10px}
+.building img{border-radius:10px;border:1px solid rgba(255,255,255,.06);height:180px;object-fit:cover;width:100%}
+.legal{margin-top:10px;display:flex;justify-content:space-between;align-items:center;gap:10px;color:var(--muted);font-size:14px}
+.legal .designed{opacity:.9;letter-spacing:.6px}
+
+@media (max-width: 1024px){
+	.hero{grid-template-columns:1fr}
+	.hero-left{position:relative;top:0;height:auto;min-height:auto}
+	.carousel img{height:200px}
+	.media{grid-template-columns:120px 1fr}
+}
+
+@media (max-width: 640px){
+	.nav{gap:8px}
+	.nav-btn{padding:8px 10px}
+	.media{grid-template-columns:1fr}
+	.feature{grid-template-columns:1fr}
+	.contact-grid{grid-template-columns:1fr}
+	.buildings{grid-template-columns:1fr}
+}

@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "name": "Building No. 1",
+    "image": "/images/building-1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Building No. 2",
+    "image": "/images/building-2.jpg"
+  }
+]
+

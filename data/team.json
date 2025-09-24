@@ -1,0 +1,15 @@
+[
+  {
+    "id": 1,
+    "name": "Dr. Jagdish Vishnoi",
+    "role": "Director",
+    "image": "/images/team-jagdish.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Mr. Chetan Ram Choudhary",
+    "role": "Counselor",
+    "image": "/images/team-chetan.jpg"
+  }
+]
+

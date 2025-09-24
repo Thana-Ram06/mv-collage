@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "Clean Environment",
+    "description": "Well-maintained green campus with hygienic facilities for students and staff.",
+    "image": "/images/clean-campus.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Sports",
+    "description": "Indoor and outdoor sports facilities encouraging physical fitness and teamwork.",
+    "image": "/images/sports.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Library",
+    "description": "A rich collection of books, journals, and digital resources.",
+    "image": "/images/library.jpg"
+  },
+  {
+    "id": 4,
+    "name": "ICT Lab",
+    "description": "Modern ICT lab with high-speed internet and latest software tools.",
+    "image": "/images/ict-lab.jpg"
+  }
+]
+

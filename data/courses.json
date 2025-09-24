@@ -1,0 +1,15 @@
+[
+  {
+    "id": 1,
+    "name": "Special B.Ed",
+    "description": "A specialized Bachelor of Education program focusing on inclusive education and modern pedagogy.",
+    "image": "/images/special-bed.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Special D.Ed",
+    "description": "A Diploma in Education designed to prepare educators for diverse classroom needs.",
+    "image": "/images/special-ded.jpg"
+  }
+]
+
