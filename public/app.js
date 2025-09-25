@@ -122,7 +122,7 @@ async function fetchJSON(url){
   }catch(e){ console.warn(e); }
 })();
 
-// Render Courses
+// Render Courses (old list with descriptions)
 (async function renderCourses(){
   try{
     const data = await fetchJSON('/api/courses');
@@ -140,7 +140,7 @@ async function fetchJSON(url){
   }catch(e){ console.warn(e); }
 })();
 
-// Render Facilities
+// Render Facilities (show item photos; remove single left hero image)
 (async function renderFacilities(){
   try{
     const data = await fetchJSON('/api/facilities');
@@ -149,16 +149,16 @@ async function fetchJSON(url){
     list.innerHTML = '';
     data.forEach(f=>{
       const div = document.createElement('div');
-      div.className = 'item';
-      div.innerHTML = `<strong>${f.name}</strong><p>${f.description||''}</p>`;
+      div.className = 'item media';
+      div.innerHTML = `<div class="media-image"><img src="${f.image||'/images/library.jpg'}" alt="${f.name}"></div><div class="media-body"><strong>${f.name}</strong><p>${f.description||''}</p>`;
       list.appendChild(div);
     });
     const img = document.getElementById('facilities-image');
-    if (img && data[0]?.image) img.src = data[0].image;
+    if (img) img.remove();
   }catch(e){ console.warn(e); }
 })();
 
-// Render Team
+// Render Team (remove left hero image)
 (async function renderTeam(){
   try{
     const data = await fetchJSON('/api/team');
@@ -177,11 +177,11 @@ async function fetchJSON(url){
       list.appendChild(li);
     });
     const imgHero = document.getElementById('team-image');
-    if (imgHero && data[0]?.image) imgHero.src = data[0].image;
+    if (imgHero) imgHero.remove();
   }catch(e){ console.warn(e); }
 })();
 
-// Render Buildings
+// Render Buildings (remove left hero image, stronger zoom via CSS)
 (async function renderBuildings(){
   try{
     const data = await fetchJSON('/api/buildings');
@@ -193,8 +193,8 @@ async function fetchJSON(url){
       const img = document.createElement('img');
       img.src = b.image || '/images/building-placeholder.jpg';
       img.alt = b.name;
-      img.style.width = '80px';
-      img.style.height = '60px';
+      img.style.width = '140px';
+      img.style.height = '100px';
       img.style.objectFit = 'cover';
       img.style.borderRadius = '8px';
       const span = document.createElement('span');
@@ -204,7 +204,7 @@ async function fetchJSON(url){
       list.appendChild(li);
     });
     const imgHero = document.getElementById('buildings-image');
-    if (imgHero && data[0]?.image) imgHero.src = data[0].image;
+    if (imgHero) imgHero.remove();
   }catch(e){ console.warn(e); }
 })();
 
