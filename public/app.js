@@ -190,13 +190,10 @@ async function fetchJSON(url){
     list.innerHTML = '';
     data.forEach(b=>{
       const li = document.createElement('li');
+      li.className = 'building-item';
       const img = document.createElement('img');
       img.src = b.image || '/images/building-placeholder.jpg';
       img.alt = b.name;
-      img.style.width = '140px';
-      img.style.height = '100px';
-      img.style.objectFit = 'cover';
-      img.style.borderRadius = '8px';
       const span = document.createElement('span');
       span.innerHTML = `<strong>${b.name}</strong>`;
       li.appendChild(img);
