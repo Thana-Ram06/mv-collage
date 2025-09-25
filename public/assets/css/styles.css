@@ -56,6 +56,16 @@ img{max-width:100%;display:block}
 /* Hide the large hero image if present to avoid oversized display */
 #buildings-image{display:none!important}
 
+/* Strong enforce: force building images and hero image to exact size on desktop */
+.buildings img, .building-item img, #buildings-image {
+	width: 444px !important;
+	height: 249px !important;
+	max-width: none !important;
+	object-fit: cover !important;
+	object-position: center !important;
+	display: block !important;
+}
+
 .legal{margin-top:10px;display:flex;justify-content:space-between;align-items:center;gap:10px;color:var(--muted);font-size:14px}
 .legal .designed{opacity:.9;letter-spacing:.6px}
 
