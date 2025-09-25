@@ -35,8 +35,8 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,C
 .people{list-style:none;margin:0;padding:0;display:grid;gap:10px}
 .people li{display:flex;align-items:center;gap:12px;padding:12px;border:1px solid #e5e7eb;border-radius:12px;background:#ffffff;box-shadow:0 4px 14px rgba(0,0,0,.05)}
 .people img{width:60px;height:60px;border-radius:8px;object-fit:cover;border:1px solid #e5e7eb}
-.buildings{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.buildings li{display:flex;align-items:center;gap:12px;padding:12px;border:1px solid #e5e7eb;border-radius:12px;background:#ffffff;box-shadow:0 4px 14px rgba(0,0,0,.05);overflow:hidden}
+.buildings{list-style:none;margin:0;padding:0;display:grid;gap:14px;grid-template-columns:repeat(2, 1fr)}
+.buildings li{display:block;padding:0;border:1px solid #e5e7eb;border-radius:12px;background:#ffffff;box-shadow:0 4px 14px rgba(0,0,0,.05);overflow:hidden}
 
 .contact-form{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
 .contact-form input,.contact-form textarea{background:#0a1427;border:1px solid #1f2a44;color:var(--text);padding:10px;border-radius:10px}
@@ -88,8 +88,11 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,C
 #facilities .media-image img{transition:none !important;transform:none !important;width:100%;height:170px}
 
 /* Building image zoom */
-.buildings li img{transition:transform .35s ease}
+.buildings li img{width:100%;aspect-ratio:444/249;object-fit:cover;transition:transform .35s ease;display:block}
 .buildings li:hover img{transform:scale(1.28)}
+
+/* Building caption */
+.buildings .caption{display:block;padding:8px 10px;font-weight:700;color:#111827;border-top:1px solid #e5e7eb}
 
 /* Global button click feedback */
 button:active{box-shadow:var(--ring),0 10px 28px rgba(0,0,0,.12)}

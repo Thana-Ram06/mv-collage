@@ -181,7 +181,7 @@ async function fetchJSON(url){
   }catch(e){ console.warn(e); }
 })();
 
-// Render Buildings (remove left hero image, stronger zoom via CSS)
+// Render Buildings (two images side-by-side ~444x249, image-only)
 (async function renderBuildings(){
   try{
     const data = await fetchJSON('/api/buildings');
@@ -190,14 +190,14 @@ async function fetchJSON(url){
     list.innerHTML = '';
     data.forEach(b=>{
       const li = document.createElement('li');
-      li.className = 'building-item';
       const img = document.createElement('img');
       img.src = b.image || '/images/building-placeholder.jpg';
       img.alt = b.name;
-      const span = document.createElement('span');
-      span.innerHTML = `<strong>${b.name}</strong>`;
       li.appendChild(img);
-      li.appendChild(span);
+      const cap = document.createElement('span');
+      cap.className = 'caption';
+      cap.textContent = b.name;
+      li.appendChild(cap);
       list.appendChild(li);
     });
     const imgHero = document.getElementById('buildings-image');
