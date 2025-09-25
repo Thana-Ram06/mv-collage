@@ -66,6 +66,14 @@ img{max-width:100%;display:block}
 	display: block !important;
 }
 
+/* Also constrain any card media images so the featured image doesn't expand the card */
+.card-media img {
+	width: 444px !important;
+	height: 249px !important;
+	max-width: none !important;
+	object-fit: cover !important;
+}
+
 .legal{margin-top:10px;display:flex;justify-content:space-between;align-items:center;gap:10px;color:var(--muted);font-size:14px}
 .legal .designed{opacity:.9;letter-spacing:.6px}
 
