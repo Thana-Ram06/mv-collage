@@ -19,7 +19,7 @@ router.get('/team', getTeam);
 router.get('/buildings', getBuildings);
 router.post('/contact', submitContact);
 
-// List images found under data/images for banner/gallery
+ 
 router.get('/images', async (req, res, next) => {
   try {
     const dir = path.join(process.cwd(), 'data', 'images');
