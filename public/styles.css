@@ -53,7 +53,7 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,C
 .footer-links{display:flex;gap:10px}
 .footer-credit{font-weight:600}
 
-/* RYTCODE link background shadow */
+ 
 .link-ryt{position:relative;z-index:0;font-weight:800}
 .link-ryt::before{content:none !important}
 
@@ -63,11 +63,11 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,C
 }
 
 
-/* Section specific adjustments */
+ 
 #team.card,#photos.card{grid-template-columns:1fr}
 #team .card-media,#photos .card-media{display:none}
 
-/* Courses: two tiles side-by-side */
+ 
 #courses-list{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 @media (max-width:900px){#courses-list{grid-template-columns:1fr}}
 .course-tile{position:relative;overflow:hidden;border-radius:12px;border:1px solid #e5e7eb;background:#ffffff;box-shadow:0 6px 18px rgba(0,0,0,.06)}
@@ -75,7 +75,7 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,C
 .course-tile:hover img{transform:scale(1.05)}
 .course-caption{position:absolute;left:10px;bottom:10px;background:rgba(255,255,255,.9);color:#111827;padding:6px 10px;border-radius:999px;font-weight:700;border:1px solid #e5e7eb;box-shadow:0 4px 12px rgba(0,0,0,.08)}
 
-/* Facilities tabs */
+ 
 .fac-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
 .fac-tabs button{appearance:none;border:1px solid #e5e7eb;background:#ffffff;color:#111827;padding:8px 12px;border-radius:999px;cursor:pointer;font-weight:700;transition:all .2s}
 .fac-tabs button:hover{box-shadow:0 6px 16px rgba(0,0,0,.08)}
@@ -84,17 +84,17 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,C
 .fac-view img{width:100%;height:260px;object-fit:cover}
 .fac-view .fac-caption{padding:10px 12px;font-weight:700;color:#111827}
 
-/* Never zoom facilities photos; match News size */
+
 #facilities .media-image img{transition:none !important;transform:none !important;width:100%;height:170px}
 
-/* Building image zoom */
+ 
 .buildings li img{width:100%;aspect-ratio:444/249;object-fit:cover;transition:transform .35s ease;display:block}
 .buildings li:hover img{transform:scale(1.28)}
 
-/* Building caption */
+ 
 .buildings .caption{display:block;padding:8px 10px;font-weight:700;color:#111827;border-top:1px solid #e5e7eb}
 
-/* Global button click feedback */
+ 
 button:active{box-shadow:var(--ring),0 10px 28px rgba(0,0,0,.12)}
 
 
