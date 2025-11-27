@@ -1,4 +1,4 @@
-// Smooth scroll navigation
+
 document.querySelectorAll('.nav button').forEach((btn)=>{
   btn.addEventListener('click', ()=>{
     const target = document.querySelector(btn.dataset.target);
@@ -6,9 +6,9 @@ document.querySelectorAll('.nav button').forEach((btn)=>{
   });
 });
 
-// Creative hero mosaic + scrolling strip
+
 async function getImageCandidates(){
-  // Prefer specific campus/banner photos from public/images if present
+
   const preferredNames = [
     'campus-3.jpg','campus-4.jpg','campus-5.jpg',
     'baner co.jpg','admissions.jpg','building-1.jpg','building-2.jpg',
@@ -25,7 +25,8 @@ async function getImageCandidates(){
     'building-1.jpg','building-2.jpg','library.jpg','sports.jpg','ict-lab.jpg'
   ].map(n=>`/images/${encodeURIComponent(n)}`);
   const merged = [...preferred, ...apiList, ...fallback];
-  // simple de-duplication
+  
+  
   const seen = new Set();
   return merged.filter(u=>{ if(seen.has(u)) return false; seen.add(u); return true; });
 }
@@ -68,7 +69,7 @@ function buildStrip(urls){
 (async function initHero(){
   const candidates = await getImageCandidates();
 
-  // Preload images and keep only those that actually exist
+  
   const exists = async (url) => new Promise((resolve) => {
     const img = new Image();
     img.onload = () => resolve(true);
@@ -78,14 +79,14 @@ function buildStrip(urls){
 
   const selected = [];
   for (const url of candidates) {
-    if (selected.length >= 3) break; // only three running photos
-    // eslint-disable-next-line no-await-in-loop
+    if (selected.length >= 3) break; 
+    
     if (await exists(url)) selected.push(url);
   }
 
   const track = document.getElementById('banner-track');
   if (track && selected.length) {
-    // Duplicate to enable seamless scrolling but show only the three valid images
+    
     const renderList = [...selected, ...selected];
     track.innerHTML = '';
     renderList.forEach((u) => {
@@ -97,14 +98,14 @@ function buildStrip(urls){
   }
 })();
 
-// Helpers
+
 async function fetchJSON(url){
   const res = await fetch(url);
   if(!res.ok) throw new Error('Failed fetching '+url);
   return res.json();
 }
 
-// Render News
+
 (async function renderNews(){
   try{
     const data = await fetchJSON('/api/news');
@@ -122,7 +123,7 @@ async function fetchJSON(url){
   }catch(e){ console.warn(e); }
 })();
 
-// Render Courses (old list with descriptions)
+
 (async function renderCourses(){
   try{
     const data = await fetchJSON('/api/courses');
@@ -140,7 +141,7 @@ async function fetchJSON(url){
   }catch(e){ console.warn(e); }
 })();
 
-// Render Facilities (show item photos; remove single left hero image)
+
 (async function renderFacilities(){
   try{
     const data = await fetchJSON('/api/facilities');
@@ -158,7 +159,7 @@ async function fetchJSON(url){
   }catch(e){ console.warn(e); }
 })();
 
-// Render Team (remove left hero image)
+
 (async function renderTeam(){
   try{
     const data = await fetchJSON('/api/team');
@@ -181,7 +182,7 @@ async function fetchJSON(url){
   }catch(e){ console.warn(e); }
 })();
 
-// Render Buildings (two images side-by-side ~444x249, image-only)
+
 (async function renderBuildings(){
   try{
     const data = await fetchJSON('/api/buildings');
@@ -205,6 +206,6 @@ async function fetchJSON(url){
   }catch(e){ console.warn(e); }
 })();
 
-// Contact form removed per request; keeping only contact details
+
 
 
